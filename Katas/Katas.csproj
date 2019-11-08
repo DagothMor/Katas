@@ -8,7 +8,6 @@
   <ItemGroup>
     <Folder Include="Katas\ChekArrayContainsValue\Models\" />
     <Folder Include="Katas\ChekArrayContainsValue\Service\" />
-    <Folder Include="Katas\RemoveAll\" />
     <Folder Include="Katas\PaginationTest\Model\" />
     <Folder Include="Katas\PaginationTest\Service\" />
     <Folder Include="Katas\Remove All The Marked Elements of a List\Models\" />
