@@ -6,12 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Katas\ChekArrayContainsValue\Models\" />
-    <Folder Include="Katas\ChekArrayContainsValue\Service\" />
     <Folder Include="Katas\PaginationTest\Service\" />
-    <Folder Include="Katas\Remove All The Marked Elements of a List\Models\" />
-    <Folder Include="Katas\TidyNumber\Models\" />
-    <Folder Include="Katas\TidyNumber\Services\" />
+    <Folder Include="Katas\7katas\Remove All The Marked Elements of a List\Models\" />
+    <Folder Include="Katas\7katas\TidyNumber\Models\" />
+    <Folder Include="Katas\7katas\TidyNumber\Services\" />
   </ItemGroup>
 
 </Project>
