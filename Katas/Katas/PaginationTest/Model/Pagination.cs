@@ -11,7 +11,9 @@ namespace Katas.Katas.PaginationTest.Model
     {
         private int _itemsperpage;
         private int _currentpage;
-        //IEnumerable<T> Items; // gets the items for the current page index
+        //IEnumerable<T> Items 
+           
+         // gets the items for the current page index
         public int CurrentPage
         {
             get
@@ -68,7 +70,7 @@ namespace Katas.Katas.PaginationTest.Model
             TotalPages = Convert.ToInt32(Math.Ceiling((double)Total / ItemsPerPage));
         }
 
-        public List<T> Items
+        public IEnumerable<T> Items
         {
             get
             {

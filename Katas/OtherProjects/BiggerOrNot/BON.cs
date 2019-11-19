@@ -70,7 +70,3 @@ namespace Katas.BiggerOrNot
 
     }
 }
-///if (SecondChars.Length < FirstChars.Length)
-///{
-///IsItNeedToSwap = true;
-///}

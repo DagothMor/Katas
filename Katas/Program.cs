@@ -29,7 +29,7 @@ namespace Katas
 
         static void Main(string[] args)
         {
-            DRAS.Start();
+            PaginationTestStart.Start();
         }
 
         
