@@ -4,6 +4,7 @@ using Katas.BiggerOrNot;
 using Katas.DependencyRegisterAlphabeticalSort;
 using Katas.Katas._6kyi.Delete_occurrences_of_an_element_if_it_occurs_more_than_n_times;
 using Katas.Katas._6kyi.FunWithListsMap;
+using Katas.Katas._6kyi.GenericTypeLoop;
 using Katas.Katas._7katas.BuildingSpheres;
 using Katas.Katas._7katas.Convert_a_linked_list_to_a_string;
 using Katas.Katas._8katas.SortAndStart;
@@ -29,7 +30,7 @@ namespace Katas
 
         static void Main(string[] args)
         {
-            PaginationTestStart.Start();
+            SecondSolution.Start();
         }
 
         
