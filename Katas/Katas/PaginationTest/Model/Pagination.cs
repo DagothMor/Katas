@@ -26,7 +26,10 @@ namespace Katas.Katas.PaginationTest.Model
                 List<T> inlist = list.ToList();
                 for (int i = 0; i < ItemsPerPage; i++)
                 {
-                    listnew.Add(inlist[((CurrentPage - 1) * ItemsPerPage) + i]);
+                    if (inlist.Count > ((CurrentPage - 1) * ItemsPerPage) + i)
+                    {
+                        listnew.Add(inlist[((CurrentPage - 1) * ItemsPerPage) + i]);
+                    }
                 }
 
                 IEnumerable<T> listEnumerable = listnew;
@@ -55,7 +58,7 @@ namespace Katas.Katas.PaginationTest.Model
         {
             get
             {
-                if (_itemsperpage<0)
+                if (_itemsperpage < 0)
                 {
                     return 10;
                 }
@@ -64,15 +67,15 @@ namespace Katas.Katas.PaginationTest.Model
             }
             set
             {
-                
-                    _itemsperpage = value;
-                
+
+                _itemsperpage = value;
+
             }
         }
         // gets/sets the number of items to return on each page, default 10 items
 
         public int Total { get; } // gets the total number of items in the source
-        public int TotalPages { get; } // gets total number of pages
+        public int TotalPages { get { return ceiling(Total, ItemsPerPage); } } // gets total number of pages
 
         public IEnumerable<T> list;
 
@@ -82,9 +85,20 @@ namespace Katas.Katas.PaginationTest.Model
             CurrentPage = 1;
             ItemsPerPage = 10;
             Total = source.Count();
-            TotalPages = (int)Math.Ceiling(((double) Total / (double)ItemsPerPage));
+
         }
 
+        public static int ceiling(int total, int itemsperpage)
+        {
+            int totalpages = total / itemsperpage;
 
+            if (total % itemsperpage > 0)
+            {
+                totalpages++;
+            }
+
+            return totalpages;
+        }
     }
+
 }

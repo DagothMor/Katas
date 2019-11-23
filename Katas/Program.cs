@@ -21,6 +21,7 @@ using Katas.Katas.Remove_All_The_Marked_Elements_of_a_List.Services;
 using Katas.Katas.Split1ArrayTo2AndSumThemInto1NTimes;
 using Katas.Katas.The_Supermarket_Queue;
 using Katas.Katas.TidyNumber;
+using Katas.ZipUNZip.Services;
 
 
 namespace Katas
@@ -30,7 +31,7 @@ namespace Katas
 
         static void Main(string[] args)
         {
-            SecondSolution.Start();
+           ZipUNZip.ZipUNZip.Start();
         }
 
         
