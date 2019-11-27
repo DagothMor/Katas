@@ -15,7 +15,6 @@ namespace Katas.ZipUNZip.Services
             {
                 ListOfNodes.Add(new BTNode(entry.Key.ToString(),entry.Value,default,default));
             }
-
             return ListOfNodes;
         }
     }

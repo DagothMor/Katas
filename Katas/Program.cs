@@ -31,7 +31,7 @@ namespace Katas
 
         static void Main(string[] args)
         {
-           ZipUNZip.ZipUNZip.Start();
+          ZipUNZip.ZipUNZip.Start();
         }
 
         

@@ -32,7 +32,11 @@ namespace Katas.ZipUNZip
             Dictionary<string,string> ResultCode =EnterTheDictionaryOfCode.Fulling(Tree,ListNode);
             Console.WriteLine("The Dictionary if fulled");
             ConsoleOut.Dictionary(ResultCode);
-            Console.WriteLine("Press Enter to Exit");
+            Console.WriteLine("Start to full the text");
+            string textout = LettersToBinaryCode.Transformation(Tree, lettersin);
+            Console.ReadLine();
+            Console.WriteLine("Making the file with binarycode");
+            CreateFile.Start(textout,ResultCode);
             Console.ReadLine();
         }
     }
