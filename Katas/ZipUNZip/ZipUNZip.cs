@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Katas.Katas.The_Supermarket_Queue.Services;
+using Katas.ZipUNZip.Models;
 using Katas.ZipUNZip.Services;
+using System.Linq;
 
 namespace Katas.ZipUNZip
 {
@@ -17,15 +19,21 @@ namespace Katas.ZipUNZip
             Dictionary<char, int> CountLetters = Services.CountLetters.Count(lettersin);
             ConsoleOut.Dictionary(CountLetters);
             Console.ReadLine();
-            int CountofKeys = CountLetters.Count;
-            List<string> BinaryList = BinaryListMaker.ListMaker(CountofKeys);
-            ConsoleOut.List(BinaryList);
-            List<int> valueslist = FullingList.ValuesList(CountLetters);
-            valueslist.Sort();
-            valueslist.Reverse();
-            ConsoleOut.List(valueslist);
+            List<BTNode> ListNode = MakeListNode.ListNode(CountLetters);
             Console.ReadLine();
-            //переделать генератор листкода
+            List<BTNode> SortedListOfNodes = ListNode.OrderBy(x => x.Count).ToList();
+            Console.WriteLine("List is sorted");
+            Console.WriteLine("List is Reversed");
+            Console.ReadLine();
+            BinaryTree Tree = BuildingBinaryTree.Building(SortedListOfNodes);
+            Console.WriteLine("Tree is maked");
+            Console.ReadLine();
+            Console.WriteLine("Lets fulled Dictionary walking on the tree");
+            Dictionary<string,string> ResultCode =EnterTheDictionaryOfCode.Fulling(Tree,ListNode);
+            Console.WriteLine("The Dictionary if fulled");
+            ConsoleOut.Dictionary(ResultCode);
+            Console.WriteLine("Press Enter to Exit");
+            Console.ReadLine();
         }
     }
 }

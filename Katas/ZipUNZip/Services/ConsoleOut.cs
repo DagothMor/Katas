@@ -6,9 +6,9 @@ namespace Katas.ZipUNZip.Services
 {
     public static class ConsoleOut
     {
-        public static void Dictionary(Dictionary<char,int> Dictionary)
+        public static void Dictionary<T,T2>(Dictionary<T,T2> Dictionary)
         {
-            foreach (KeyValuePair<char,int> entry in Dictionary)
+            foreach (KeyValuePair<T,T2> entry in Dictionary)
             {
                 Console.Write($"{entry.Value}");
                 Console.Write($"=");

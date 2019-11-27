@@ -14,16 +14,10 @@ namespace Katas.ZipUNZip.Services
             List<string> CookedList = ListMaker(n);
             for (int i = 0; i < CookedList.Count; i++)
             {
-
                 Console.WriteLine("-----");
                 Console.WriteLine($"{i}={CookedList[i]}");
-
             }
-
             Console.ReadLine();
-
-
-
         }
 
         public static List<string> ListMaker(int N)
