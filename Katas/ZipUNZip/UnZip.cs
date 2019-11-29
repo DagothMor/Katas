@@ -11,10 +11,15 @@ namespace Katas.ZipUNZip.Services
             Console.WriteLine("Press Enter To Start");
             Console.ReadLine();
             Console.WriteLine("Getting the text");
-            string binarycode = ReadTheFile.Read();
-
-
-            Console.WriteLine("Press Enter To Start");
+            string binarycode = ReadTheFile.ReadCode();
+            List<char> DecoderTable = ReadTheFile.ReadTable();
+            Dictionary<string, string> DecoderDictionary = FullingDecoderDictionary.Full(DecoderTable);
+            Console.WriteLine("Decoder is fulled");
+            Console.ReadLine();
+            Console.WriteLine("Decoding Message");
+            string decoded = DecodingMessage.Decode(DecoderDictionary, binarycode);
+            Console.WriteLine("The message is:");
+            Console.WriteLine(decoded);
             Console.ReadLine();
 
 

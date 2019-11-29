@@ -17,11 +17,12 @@ namespace Katas.ZipUNZip.Services
                     sw.WriteLine(textout);
                     foreach (KeyValuePair<T,T2> entry in dictionary)
                     {
-                        sw.Write($"{entry.Value}");
-                        sw.Write($"=");
                         sw.Write($"{entry.Key}");
+                        sw.Write($"=");
+                        sw.Write($"{entry.Value}");
                         sw.Write($";");
                     }
+                    
                 }
                 Console.WriteLine("Запись выполнена");
             }
