@@ -11,6 +11,9 @@
     <Folder Include="Katas\7katas\TidyNumber\Models\" />
     <Folder Include="Katas\7katas\TidyNumber\Services\" />
     <Folder Include="OtherProjects\CreatingABinaryTree\Service\" />
+    <Folder Include="Сrypt_GOST28147_89\Interfaces\" />
+    <Folder Include="Сrypt_GOST28147_89\Models\" />
+    <Folder Include="Сrypt_GOST28147_89\View\" />
   </ItemGroup>
 
 </Project>

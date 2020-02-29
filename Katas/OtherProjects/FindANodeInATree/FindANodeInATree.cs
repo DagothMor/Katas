@@ -35,6 +35,9 @@ namespace Katas.OtherProjects.FindANodeInATree
                 Console.WriteLine("The node is find");
             }
             Console.WriteLine("Press enter to exit");
+            int leaves = CountTheLeaves.Start(tree);
+            Console.WriteLine($"Leaves={leaves}");
+            Console.WriteLine("Press enter to exit");
             Console.ReadLine();
 
         }
