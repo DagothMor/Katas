@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading;
-using System.Xml.Schema;
-using Katas.Katas._6kyi.ChristmasTree;
-using Katas.Katas._6kyi.EqualSidesOfAnArray;
-using Katas.Katas.ReversingAndCombiningText;
-using Katas.ZipUNZip.Services;
-
+using System.Security.Cryptography.X509Certificates;
+using Katas.Katas._5kyu;
+using Katas.Katas._6kyu.ConsonantValues;
+using Katas.Katas._6kyu.IsPangram;
+using Katas.Katas._6kyu.UnaryMessages;
 
 namespace Katas
 {
@@ -18,40 +13,167 @@ namespace Katas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Press any key to start");
-            Console.ReadLine();
-            //call functions...
-            Console.WriteLine("Press any key to end");
-            Console.ReadLine();
+            CircleTrain.CircleTrain.Start();
         }
 
-        public static int[] monkey(int number)
+        public int ToBinary(int DecimalNumber)
         {
-            List<int> list = new List<int>();
-            
-            for (int i = 0; i <number; i++)
+            int temp1 = 0;
+            List<int> listout = new List<int>();
+            while (DecimalNumber > 0)
             {
-                list.Add(i+1);
+                temp1 = DecimalNumber % 2;
+                DecimalNumber /= 2;
+                listout.Add(temp1);
+            }
+            listout.Reverse();
+            string stringout = "";
+            for (int i = 0; i < listout.Count; i++)
+            {
+                stringout += listout[i];
+            }
+            return Convert.ToInt32(stringout);
+        }
+        public static IEnumerable<string> GooseFilter(IEnumerable<string> birds)
+        {
+                List<string> stringsout = new List<string>();
+                string[] geese = new string[] { "African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher" };
+                foreach (var VARIABLE in geese)
+                {
+                    if (!geese.Contains(VARIABLE)) { stringsout.Add(VARIABLE); }
+                }
+                return stringsout;
+        }
+        public static int[] CountBy(int x, int n)
+        {
+            int[] z = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                z[i] = x;
+                x += x;
+            }
+            return z;
+        }
+        public static int Digits(ulong n)
+        {
+            string stringofdigits = "";
+            string s = n.ToString();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsDigit(s[i]))
+                {
+
+                    stringofdigits += s[i];
+                }
+            }
+            return stringofdigits.Length;
+        }
+        public string dnaToRna(string dna)
+        {
+            string stringout = "";
+            foreach (var VARIABLE in dna)
+            {
+                if (VARIABLE == 'T')
+                {
+                    stringout += 'U';
+                }
+                else
+                {
+                    stringout += VARIABLE;
+                }
             }
 
-            return list.ToArray();
+            return stringout;
+        }
+        public static int[] InvertValues(int[] input)
+        {
+            List<int> listout = new List<int>();
+            foreach (var VARIABLE in input)
+            {
+                listout.Add(VARIABLE*-1);
+            }
+            return input;
+        }
+        public static class MonkeyCounter
+        {
+            public static void palevo(int[] monkeys)
+            {
+                for (int i = 0; i < monkeys.Length; i++)
+                {
+                    Console.WriteLine($"{i+1} Порядковый номер равен {monkeys[i]}");
+                }
+            }
+            public static int[] korney(int n)
+            {
+                List<int> list = new List<int>();
+                for (int i = 0; i < n; i++)
+                {
+                    list.Add(i + 1);
+
+
+                }
+
+                return list.ToArray();
+            }
+
+            public static int[] check(int[] massive)
+            {
+                for (int i = 1; i < massive.Length; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        massive[i] = massive[i] * 2;
+                    }
+                }
+
+                return massive;
+            }
         }
         public static string Interpret(string code)
+        {
+            string BottlesOfBeer = "";
+            for (int i = 99; i > 1; i--)
             {
-                string BottlesOfBeer = "";
-                for (int i = 99;i> 1; i--)
+                BottlesOfBeer += $"{i} bottles of beer on the wall, {i} bottles of beer.\nTake one down and pass it around, {i - 1} bottles of beer on the wall.";
+            }
+            BottlesOfBeer += "1 bottle of beer on the wall, 1 bottle of beer.\nTake one down and pass it around, no more bottles of beer on the wall.\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.";
+            switch (code)
+            {
+                case "H": { return "Hello World!"; }
+                case "Q": { return code; }
+                case "9": { return BottlesOfBeer; }
+                default: return null;
+            }
+        }
+        public static int[] CountPositivesSumNegatives(int[] input)
+        {
+            if (input == null && input.Length == 0) { return input; }
+            int CountOfPositive = 0;
+            int SumOfNegative = 0;
+            if (input.Length > 0)
+            {
+                for (int i = 0; i < input.Length; i++)
                 {
-                    BottlesOfBeer+= $"{i}bottles of beer on the wall, {i} bottles of beer.\nTake one down and pass it around, {i-1} bottles of beer on the wall.";
-                }
-                BottlesOfBeer += $"1 bottle of beer on the wall, 1 bottle of beer.\nTake one down and pass it around, no more bottles of beer on the wall.\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.";
-                switch (code)
-                {
-                    case "H": { return "Hello World!"; }
-                    case "Q": { return code; }
-                    case "9": { return BottlesOfBeer; }
-                    default: return null;
+                    if (input[i] > 0)
+                    {
+                        CountOfPositive++;
+                    }
+                    if (input[i] < 0)
+                    {
+                        SumOfNegative += input[i];
+                    }
                 }
             }
+
+            return new int[2] { CountOfPositive, SumOfNegative }; //return an array with count of positives and sum of negatives
+        }
+        public static double GuessBlue(uint blueStart, uint redStart, uint bluePulled, uint redPulled)
+        {
+            uint blue = blueStart - bluePulled;
+            uint red = redStart - redPulled;
+            double answer = (double)Math.Round((decimal)((blue + red) / blue), 2);
+            return answer;
+        }
         public static string Pattern(int n)
         {
             if (n < 1) { return ""; }
@@ -69,7 +191,7 @@ namespace Katas
                     stringout += list[i].ToString();
                 }
                 stringout += "\n";
-                list.RemoveAt(list.Count-1);
+                list.RemoveAt(list.Count - 1);
             }
 
             stringout += n.ToString();
@@ -167,6 +289,28 @@ namespace Katas
             }
             return Int64.Parse(stringout);
         }
+        public static bool IsPalindrome(object line)
+        {
+            List<char> list = line.ToString().ToCharArray().Reverse().ToList();
+            List<char> stringin = line.ToString().ToCharArray().ToList();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (stringin[i] != stringin[i])
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+        public static bool IsUpperCase(string text)
+        {
+            string lowercases = "abcdefghijklmnopqrstuvwxyz";
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (lowercases.Equals(text[i])) { return false; }
+            }
+            return true;
+        }
         public static int NoBoringZeros1(int n)
         {
             List<int> list = n.ToString().ToCharArray().ToList().Select(x => int.Parse(x.ToString())).ToList();
@@ -218,7 +362,7 @@ namespace Katas
         }
         public static int NoBoringZeros(int n)
         {
-            while (n%10==0)
+            while (n % 10 == 0)
             {
                 n /= 10;
             }
@@ -226,7 +370,7 @@ namespace Katas
         }
         public static char AddLetters(char[] letters)
         {
-            if (letters.Length<1)
+            if (letters.Length < 1)
             {
                 return 'z';
             }
@@ -309,16 +453,18 @@ namespace Katas
             List<int> list = arr.ToList();
             List<int> listout = new List<int>();
             int Count = arr.Length;
-            if (Count % 2 == 0) {
-                for (int i = 0; i <Count-1; i++)
+            if (Count % 2 == 0)
+            {
+                for (int i = 0; i < Count - 1; i++)
                 {
-                    listout.Add(list[i+1]);
+                    listout.Add(list[i + 1]);
                     listout.Add(list[i]);
                     i++;
                 }
             }
-            else {
-                for (int i = 0; i < Count-2; i++)
+            else
+            {
+                for (int i = 0; i < Count - 2; i++)
                 {
                     listout.Add(list[i + 1]);
                     listout.Add(list[i]);
@@ -326,9 +472,164 @@ namespace Katas
                 }
                 listout.Add(list[list.Count]);
             }
-            
-            
+
+
             return list;
         }
+        public static int Factorial(int numb)
+        {
+            int res = 1;
+            for (int i = numb; i > 1; i--)
+                res *= i;
+            return res;
+        }
+        public static string Correct(string text)
+        {
+            string stringout = "";
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == '5') { stringout += "S"; }
+                else if (text[i] == '0') { stringout += "O"; }
+                else if (text[i] == '1') { stringout += "I"; }
+                else { stringout += text[i]; }
+            }
+            return stringout;
+        }
+        public static int SumOfMinimums(int[,] numbers)
+        {
+            int rows = numbers.GetUpperBound(0) + 1;
+            int columns = numbers.GetUpperBound(1) + 1;
+            int sum = 0;
+            int buffer = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                buffer = numbers[i, 0];
+                for (int j = 1; j < columns; j++)
+                {
+                    if (numbers[i, j] < buffer)
+                    {
+                        buffer = numbers[i, j];
+                    }
+                }
+                sum += buffer;
+            }
+            return sum;
+        }
+        public static bool Solution(string str, string ending)
+        {
+            string end = stringreverse(ending);
+            string stringin = stringreverse(str);
+            int Lengthword = stringin.Length;
+            for (int i = 0; i < end.Length; i++)
+            {
+                if (i < Lengthword)
+                {
+                    if (end[i] != stringin[i])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public static string stringreverse(string stringin)
+        {
+            List<char> listin = stringin.ToCharArray().Reverse().ToList();
+            string stringout = "";
+            for (int i = 0; i < listin.Count; i++)
+            {
+                stringout += listin[i].ToString();
+            }
+
+            return stringout;
+        }
+        public static string SortGiftCode(string code)
+        {
+            string alphabet = "abcdefghijklmnopqrstuvwxyz";
+            List<char> listin = code.ToCharArray().ToList();
+            List<char> list = new List<char>();
+            while (listin.Count>1)
+            {
+                for (int i = 0; i < alphabet.Length; i++)
+                {
+                    if (StringContainsLetter(ref listin, alphabet[i]))
+                    {
+                        list.Add(alphabet[i]);
+                        i--;
+                    }
+                }
+            }
+            
+
+            string stringout = "";
+            for (int i = 0; i < list.Count; i++)
+            {
+                stringout += list[i];
+            }
+
+            return stringout;
+        }
+        public static bool StringContainsLetter(ref List<char> word, char letter)
+        {
+            for (int i = 0; i < word.Count; i++)
+            {
+                if (word[i] == letter)
+                {
+                    word.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+
+        }
+        public static string DuplicateEncode(string word)
+        {
+            Dictionary<char, int> dictionary = new Dictionary<char, int>();
+            foreach (var letter in word)
+            {
+                if (dictionary.ContainsKey(letter))
+                {
+                    dictionary[letter]++;
+                }
+                else
+                {
+                    dictionary.Add(letter,1);
+                }
+            }
+
+            string stringout = "";
+            foreach (var VARIABLE in word)
+            {
+                if (dictionary[VARIABLE] >= 2)
+                {
+                    stringout += ")";
+                }
+                else
+                {
+                    stringout += "(";
+                }
+            }
+            return stringout;
+        }
+        public static long rowSumOddNumbers(long n)
+        {
+            long Answer = 1;
+            int CountNumbersInRow = 1;
+            long CurrentNumber = 1;
+            for (int i = 1; i <n; i++)
+            {
+                for (int j = 1; j < n; j++)
+                {
+                    Answer += 2;
+                }
+                CountNumbersInRow++;
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Answer += Answer+2;
+            }
+            return Answer;
+        }
     }
+
 }
