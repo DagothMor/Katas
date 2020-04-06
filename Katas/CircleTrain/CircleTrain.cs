@@ -51,7 +51,6 @@ namespace Katas.CircleTrain
         {
             bool flag = false;
             int Count = 0;
-            int step = 0;   
             List<bool> map = new List<bool>(1){false};
             while (flag == false)
             {

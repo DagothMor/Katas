@@ -16,6 +16,39 @@ namespace Katas
             CircleTrain.CircleTrain.Start();
         }
 
+        public static IEnumerable<T> UniqueInOrder<T>(IEnumerable<T> iterable)
+        {
+            List<T> list = new List<T>();
+            int i = 0;
+            foreach (T VARIABLE in iterable)
+            {
+                if (list.Count>1)
+                {
+                    if (list[i-1].Equals(VARIABLE))
+                    {
+                        list.Add(VARIABLE);
+                        i++;
+                    }
+                }
+
+                
+            }
+
+            return list;
+        }
+
+        public string hydrate(string drinkString)
+        {
+            int Count = 0;
+            for (int i = 0; i < drinkString.Length; i++)
+            {
+                if (char.IsDigit(drinkString[i]))
+                {
+                    Count += Convert.ToInt32(drinkString[i]);
+                }
+            }
+            return $"{Count} glasses of water";
+        }
         public int ToBinary(int DecimalNumber)
         {
             int temp1 = 0;
