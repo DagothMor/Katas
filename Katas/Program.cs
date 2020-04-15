@@ -13,9 +13,118 @@ namespace Katas
     {
         static void Main(string[] args)
         {
-            CircleTrain.CircleTrain.Start();
+            FirstVariationOnCaesarCipher.Start();
         }
+        public static string ReverseWords(string str)
+        {
+            List<string> list = str.Split(' ').Reverse().ToList();
+            string stringout = "";
+            foreach (string word in list) { stringout += word + " "; }
+            return stringout;
+        }
+        public static int TwiceAsOld(int dadYears, int sonYears)
+        {
+            int answer = 0;
+            while (sonYears * 2 != dadYears)
+            {
+                dadYears++;
+                sonYears++;
+                answer++;
+            }
+            return answer;
+        }
+        public static bool IsDigit(string s)
+        {
+            return !s.Contains("- .1234567890") ? true : false;
+        }
+        public static int SumMul(int n, int m)
+        {
+            if (n == 0 && n > m) throw new ArgumentException();
+            int answer = n;
+            for (int i = n; answer < m; i += n)
+            {
+                answer += i;
+            }
+            return answer;
+        }
+        public static string Greet(string language)
+        {
+            Dictionary<string, string> dictionary = new Dictionary<string, string>()
+            {
+                {"english", "Welcome"},
+                {"czech", "Vitejte"},
+                {"danish", "Velkomst"},
+                {"dutch", "Welkom"},
+                {"estonian", "Tere tulemast"},
+                {"finnish", "Tervetuloa"},
+                {"flemish", "Welgekomen"},
+                {"french", "Bienvenue"},
+                {"german", "Willkommen"},
+                {"irish", "Failte"},
+                {"italian", "Benvenuto"},
+                {"latvian", "Gaidits"},
+                {"lithuanian", "Laukiamas"},
+                {"polish", "Witamy"},
+                {"spanish", "Bienvenido"},
+                {"swedish", "Valkommen"},
+                {"welsh", "Croeso"},
+                {"IP_ADDRESS_INVALID", "Welcome"},
+                {"IP_ADDRESS_NOT_FOUND", "Welcome"},
+                {"IP_ADDRESS_NOT_FOUND", "Welcome"}
+            };
+            
+            return dictionary.ContainsKey(language)?dictionary[language]:"Welcome";
+        }
+        public static int[] SortedArray(int[] array)
+        {
+            int buffer;
+            for (int i = 0; i < array.Length-1; i++)
+            {
+                if (array[i]>array[i+1])
+                {
+                    buffer = array[i + 1];
+                    array[i + 1] = array[i];
+                    array[i] = buffer;
+                    if (i <= 2)
+                    {
+                        i = 0;}
+                    else { i -= 2; }
+                }
+            }
+            return array;
 
+        }
+        public static int[] WaveSort(int[] arr)
+        {
+            Array.Sort(arr);
+            int buffer;
+            for (int i = 0; i < arr.Length - 1; i += 2)
+            {
+                buffer = arr[i + 1];
+                arr[i + 1] = arr[i];
+                arr[i] = buffer;
+            }
+
+            return arr;
+        }
+        public static void DisplayArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"|{array[i]}|");
+            }
+            Console.WriteLine("_");
+        }
+        public static int[] RandomGeneratedArray(int Count,int EndRange)
+        {
+            Random random = new Random();
+            List<int> list = new List<int>();
+            for (int i = 0; i < Count; i++)
+            {
+                list.Add(random.Next(EndRange));
+            }
+            return list.ToArray();
+        }
         public static IEnumerable<T> UniqueInOrder<T>(IEnumerable<T> iterable)
         {
             List<T> list = new List<T>();
@@ -30,8 +139,6 @@ namespace Katas
                         i++;
                     }
                 }
-
-                
             }
 
             return list;
@@ -86,6 +193,47 @@ namespace Katas
                 x += x;
             }
             return z;
+        }
+        public static (int, int)[] TwosDifference(int[] array)
+        {
+            List<(int, int)> listout = new List<(int, int)>();
+            array = array.OrderBy(x => x).ToArray();
+            int end = array.Length - 1;
+            for (int i = 0; i < end; i++)
+            {
+                for (int j = i; j < end; j++)
+                {
+                    if (array[j + 1] - array[i] == 2)
+                    {
+                        listout.Add((array[i],array[j+1]));
+                    }
+                }
+            }
+            return listout.ToArray();
+        }
+        public static (int, int)[] TwosDifference2(int[] array)
+        {
+            List<(int, int)> listout = new List<(int, int)>();
+            int end = array.Length - 1;
+            for (int i = 0; i < end; i++)
+            {
+                for (int j = i; j < end; j++)
+                {
+                    if (array[j + 1] - array[j] == 2)
+                    {
+                        listout.Add((array[j], array[j + 1]));
+                    }
+                }
+                if (array[^0] - array[i] == 2)
+                {
+                    listout.Add((array[i], array[^0]));
+                }
+            }
+            if (array[^0] - array[^1] == 2)
+            {
+                listout.Add((array[^1], array[^0]));
+            }
+            return listout.ToArray();
         }
         public static int Digits(ulong n)
         {
