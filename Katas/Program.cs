@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using Katas.Katas._3kyu;
 using Katas.Katas._5kyu;
 using Katas.Katas._6kyu.ConsonantValues;
 using Katas.Katas._6kyu.IsPangram;
@@ -13,7 +14,12 @@ namespace Katas
     {
         static void Main(string[] args)
         {
-            FirstVariationOnCaesarCipher.Start();
+            Console.WriteLine("Enter any key to start");
+            Console.ReadLine();
+            string stringencode = RailFenceCipher.Encode("WEAREDISCOVEREDFLEEATONCE",3);
+            string stringdecode = RailFenceCipher.Decode(stringencode, 3);
+            Console.WriteLine("Enter any key to start");
+            Console.ReadLine();
         }
         public static string ReverseWords(string str)
         {
