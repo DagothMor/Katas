@@ -88,12 +88,12 @@ namespace Katas.Katas._3kyu
 
         public static string GetStringFromList(List<char> listin)
         {
-            string stringout = "";
+            string stringout = "";//Need stringbuilder
             foreach (char letter in listin)
             {
-                stringout += letter;
+                stringout += letter;//stringbuilder.Append();
             }
-            return stringout;
+            return stringout;//stringbuilder.ToString();
         }
     }
 
