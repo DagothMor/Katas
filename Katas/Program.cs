@@ -16,11 +16,18 @@ namespace Katas
         {
             Console.WriteLine("Enter any key to start");
             Console.ReadLine();
-            string stringencode = RailFenceCipher.Encode("WEAREDISCOVEREDFLEEATONCE",3);
-            string stringdecode = RailFenceCipher.Decode(stringencode, 3);
+            int number = 5057;
+            int answer = 6015%26;//*13
+            int[] array = new int[3];
+
+            Console.WriteLine(answer);
+            //string stringencode = RailFenceCipher.Encode("WEAREDISCOVEREDFLEEATONCE",3);
+            //string stringdecode = RailFenceCipher.Decode(stringencode, 3);
+
             Console.WriteLine("Enter any key to start");
             Console.ReadLine();
         }
+
         public static string ReverseWords(string str)
         {
             List<string> list = str.Split(' ').Reverse().ToList();
@@ -581,7 +588,6 @@ namespace Katas
             }
             return reverseDictionary[sum];
         }
-
         public static string ToAlternatingCase(string s)
         {
             string LowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
