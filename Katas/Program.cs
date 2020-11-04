@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using Katas.Katas._3kyu;
-using Katas.Katas._5kyu;
-using Katas.Katas._6kyu.ConsonantValues;
-using Katas.Katas._6kyu.IsPangram;
-using Katas.Katas._6kyu.UnaryMessages;
+using Codewars.Katas._3kyu;
+using Codewars.Katas._5kyu;
 
 namespace Katas
 {
@@ -14,18 +10,7 @@ namespace Katas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter any key to start");
-            Console.ReadLine();
-            int number = 5057;
-            int answer = 6015%26;//*13
-            int[] array = new int[3];
-
-            Console.WriteLine(answer);
-            //string stringencode = RailFenceCipher.Encode("WEAREDISCOVEREDFLEEATONCE",3);
-            //string stringdecode = RailFenceCipher.Decode(stringencode, 3);
-
-            Console.WriteLine("Enter any key to start");
-            Console.ReadLine();
+            Calculator.Start();
         }
 
         public static string ReverseWords(string str)
@@ -450,7 +435,6 @@ namespace Katas
         {
             Dictionary<int, int> dictionary = new Dictionary<int, int>();
             List<int> list = new List<int>();
-            int key = 0;
             int val = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -808,7 +792,6 @@ namespace Katas
         {
             long Answer = 1;
             int CountNumbersInRow = 1;
-            long CurrentNumber = 1;
             for (int i = 1; i <n; i++)
             {
                 for (int j = 1; j < n; j++)
