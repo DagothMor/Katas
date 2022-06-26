@@ -13,6 +13,38 @@ namespace Katas
             Calculator.Start();
         }
 
+        public int solution(int[] A) {
+        int answer;
+        var myHash = new HashSet<Tuple<int,int>>();
+        for(int i =0;i<A.Length;i++)
+        {
+            for(int j = i-A[i];j<i;j++)
+            {
+                if(j<0)continue;
+                var tuple = Tuple.Create(j,i);
+                
+                //Console.WriteLine($"{myHash.Contains(tuple)}");
+                if(!myHash.Contains(tuple)){
+                    //Console.WriteLine($"adding {j},{i}");
+                    myHash.Add(tuple);
+                }
+            }
+            for(int j = i+1;j<i+A[i];j++)
+            {
+                if(j>A.Length-1)break;
+                var tuple = Tuple.Create(i,j);
+                //Console.WriteLine($"{j},{i}");
+                //Console.WriteLine($"{myHash.Contains(tuple)}");
+                if(!myHash.Contains(tuple)){
+                    //Console.WriteLine($"adding {i},{j}");
+                    myHash.Add(tuple);
+                }
+            }
+        }
+        answer = myHash.Count;
+        return answer>10000?-1:answer;
+    }
+
         public static string ReverseWords(string str)
         {
             List<string> list = str.Split(' ').Reverse().ToList();
