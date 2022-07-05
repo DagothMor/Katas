@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Katas.Katas._3kyu;
 using Katas.Katas._5kyu;
+using Katas.Katas._6kyu.BallUpwards;
 using Katas.Katas._6kyu.ConsonantValues;
 using Katas.Katas._6kyu.IsPangram;
 using Katas.Katas._6kyu.UnaryMessages;
@@ -15,9 +16,8 @@ namespace Katas
         static void Main(string[] args)
         {
             Console.WriteLine("Enter any key to start");
-            Console.ReadLine();
-            string stringencode = RailFenceCipher.Encode("WEAREDISCOVEREDFLEEATONCE",3);
-            string stringdecode = RailFenceCipher.Decode(stringencode, 3);
+            //Console.ReadLine();
+            BallUpwards.Start(15);
             Console.WriteLine("Enter any key to start");
             Console.ReadLine();
         }
