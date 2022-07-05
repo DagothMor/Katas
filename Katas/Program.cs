@@ -15,12 +15,41 @@ namespace Katas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter any key to start");
-            //Console.ReadLine();
-            BallUpwards.Start(15);
-            Console.WriteLine("Enter any key to start");
-            Console.ReadLine();
+            Calculator.Start();
         }
+
+        public int solution(int[] A) {
+        int answer;
+        var myHash = new HashSet<Tuple<int,int>>();
+        for(int i =0;i<A.Length;i++)
+        {
+            for(int j = i-A[i];j<i;j++)
+            {
+                if(j<0)continue;
+                var tuple = Tuple.Create(j,i);
+                
+                //Console.WriteLine($"{myHash.Contains(tuple)}");
+                if(!myHash.Contains(tuple)){
+                    //Console.WriteLine($"adding {j},{i}");
+                    myHash.Add(tuple);
+                }
+            }
+            for(int j = i+1;j<i+A[i];j++)
+            {
+                if(j>A.Length-1)break;
+                var tuple = Tuple.Create(i,j);
+                //Console.WriteLine($"{j},{i}");
+                //Console.WriteLine($"{myHash.Contains(tuple)}");
+                if(!myHash.Contains(tuple)){
+                    //Console.WriteLine($"adding {i},{j}");
+                    myHash.Add(tuple);
+                }
+            }
+        }
+        answer = myHash.Count;
+        return answer>10000?-1:answer;
+    }
+
         public static string ReverseWords(string str)
         {
             List<string> list = str.Split(' ').Reverse().ToList();
@@ -443,7 +472,6 @@ namespace Katas
         {
             Dictionary<int, int> dictionary = new Dictionary<int, int>();
             List<int> list = new List<int>();
-            int key = 0;
             int val = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -581,7 +609,6 @@ namespace Katas
             }
             return reverseDictionary[sum];
         }
-
         public static string ToAlternatingCase(string s)
         {
             string LowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -802,7 +829,6 @@ namespace Katas
         {
             long Answer = 1;
             int CountNumbersInRow = 1;
-            long CurrentNumber = 1;
             for (int i = 1; i <n; i++)
             {
                 for (int j = 1; j < n; j++)
