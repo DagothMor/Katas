@@ -59,10 +59,11 @@ namespace Katas.Katas._5kyu
             return stringBuilder.ToString();
         }
 
-        public static char ShiftedLetter(ref string alphabet, char letter, bool vector, int shift)
+        // было vector стало ShiftToRight
+        public static char ShiftedLetter(ref string alphabet, char letter, bool ShiftToRight, int shift)
         {
             int i = GetIndex(ref alphabet, letter);
-            if (vector == true)
+            if (ShiftToRight == true)
             {
                 i += shift;
                 while (i >= alphabet.Length)

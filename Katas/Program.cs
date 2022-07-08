@@ -15,7 +15,7 @@ namespace Katas
     {
         static void Main(string[] args)
         {
-            Calculator.Start();
+            //Calculator.Start();
         }
 
         public int solution(int[] A) {
@@ -648,6 +648,10 @@ namespace Katas
             }
             return false;
         }
+        // были заменены float на double
+        // была добавлена новая переменная типа double sharkSlowedSpeed
+        // для деления исходной скорости пополам в зависимости
+        // от присутствия дельфинов. и введен тернарный оператор.
         public static string Shark(
             int pontoonDistance,
             int sharkDistance,
@@ -655,9 +659,9 @@ namespace Katas
             int sharkSpeed,
             bool dolphin)
         {
-            if (dolphin) { sharkSpeed /= 2; }
-            float MyTime = (float)(pontoonDistance / yourSpeed);
-            float SharkTime = (float)((sharkDistance + pontoonDistance) / sharkSpeed);
+            double sharkSlowedSpeed = sharkSpeed/2;
+            double MyTime = (double)(pontoonDistance / yourSpeed);
+            double SharkTime = (double)((sharkDistance + pontoonDistance) / (dolphin ? sharkSpeed: sharkSlowedSpeed));
             if (MyTime <= SharkTime) { return "Alive!"; }
             return "Shark Bait!";
         }

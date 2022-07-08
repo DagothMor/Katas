@@ -16,9 +16,13 @@ namespace Katas.Katas.Split1ArrayTo2AndSumThemInto1NTimes
             Console.WriteLine("Введи количество шагов");
             int TaskSteps = Convert.ToInt32(Console.ReadLine());
 
-            int TotalSteps = 0;
+            
+            TotalSteps = 0;
 
-            while (TotalSteps != TaskSteps && GettedArray.Length != 1)
+            // Добавлена булевая 
+            bool GettedArrayLengthIsNotOne = GettedArray.Length != 1;
+
+            while (TotalSteps != TaskSteps && GettedArrayLengthIsNotOne)
             {
                 double divcount = GettedArray.Length / 2;
 
