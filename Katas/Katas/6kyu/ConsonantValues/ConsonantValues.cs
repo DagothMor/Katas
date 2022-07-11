@@ -28,6 +28,8 @@ namespace Katas.Katas._6kyu.ConsonantValues
                     buffersubstring = "";
                 }
             }
+            vowels = null;
+            inputword = null;
             substrings.Add(buffersubstring);
             buffersubstring = "";
             int sum=0;
