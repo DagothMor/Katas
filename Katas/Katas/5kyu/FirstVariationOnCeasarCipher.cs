@@ -107,7 +107,7 @@ namespace Katas.Katas._5kyu
         {
             List<string> list = new List<string>();
             int buffer = (int) Math.Ceiling((decimal) (word.Length / CountOfPostMans))+1;
-            int last = word.Length - buffer * (CountOfPostMans - 1);
+            
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < CountOfPostMans - 1; i++)
             {
@@ -119,6 +119,7 @@ namespace Katas.Katas._5kyu
                 stringBuilder.Clear();
             }
 
+            int last = word.Length - buffer * (CountOfPostMans - 1);
             for (int i = word.Length - last; i < word.Length; i++)
             {
                 stringBuilder.Append(word[i]);
@@ -127,6 +128,7 @@ namespace Katas.Katas._5kyu
             DisplayListOfStrings(list);
         return list;
         }
+
         public static void DisplayListOfStrings(List<string> list)
         {
             for (int i = 0; i < list.Count; i++)
